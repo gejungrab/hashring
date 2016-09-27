@@ -71,6 +71,7 @@ func (h *HashRing) UpdateWithWeights(weights map[string]int) {
 }
 
 func (h *HashRing) generateCircle() {
+	sort.Strings(h.nodes)
 	totalWeight := 0
 	for _, node := range h.nodes {
 		if weight, ok := h.weights[node]; ok {
