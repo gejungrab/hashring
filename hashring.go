@@ -146,7 +146,7 @@ func (h *HashRing) GetNodes(stringKey string, size int) (nodes []string, ok bool
 	}
 
 	if size > len(h.nodes) {
-		return []string{}, false
+		return h.nodes, true
 	}
 
 	returnedValues := make(map[string]bool, size)
