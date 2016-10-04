@@ -78,7 +78,7 @@ func TestForMoreNodes(t *testing.T) {
 	hashRing := New(nodes)
 
 	nodes, ok := hashRing.GetNodes("test", 5)
-	if ok || !(len(nodes) == 0) {
+	if !ok || (len(nodes) != 3) {
 		t.Error("GetNode(test) expected ( [], false ) but got (", nodes, ",", ok, ")")
 	}
 }
